@@ -2,9 +2,9 @@ This is an attempt at learning Drizzle ORM and Vercel Postgres by creating an To
 
 Tutorials from youtube has been followed
 
-    [Part 1](https://youtu.be/TOhDdBnYsMY)
+[Part 1](https://youtu.be/TOhDdBnYsMY)
 
-    [Part 2](https://youtu.be/w4DFArUDtfM)
+[Part 2](https://youtu.be/w4DFArUDtfM)
 
 ## Getting Started
 
