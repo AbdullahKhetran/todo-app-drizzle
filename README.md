@@ -13,6 +13,8 @@ Install the dependencies
 npm i
 ```
 
+Get your variables from [vercel](https://vercel.com) dashboard
+
 Run development server
 ```
 npm run dev
