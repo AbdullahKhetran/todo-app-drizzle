@@ -10,9 +10,9 @@ const getData = async (): Promise<Todo[]> => {
 
     let isLocalHost: boolean = false
 
-    // if (typeof window === undefined) {
-    //     isLocalHost = true
-    // }
+    if (typeof window === undefined) {
+        isLocalHost = true
+    }
 
     const siteUrl = isLocalHost ? "http://localhost:3000" : deployedURL
 
