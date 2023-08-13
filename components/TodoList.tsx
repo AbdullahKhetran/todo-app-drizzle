@@ -1,8 +1,21 @@
+require('dotenv').config
 import { Todo } from "@/lib/drizzle";
 
 const getData = async (): Promise<Todo[]> => {
+
+    // in server components absolute url path is needed so will construct that
+
+    const deployedURL = process.env.REACT_APP_API_URL
+
+    let isLocalHost: boolean = true || false
+    if (typeof window === undefined) {
+        isLocalHost === true
+    }
+
+    const apiUrl = isLocalHost ? "http://localhost:3000" : deployedURL
+
     try {
-        const res = await fetch("http://127.0.0.1:3000/api/todo", {
+        const res = await fetch(`${apiUrl}/api/todo`, {
             method: "GET",
             cache: "no-store",
             headers: {
