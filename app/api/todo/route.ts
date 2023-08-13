@@ -1,4 +1,4 @@
-import { todoTable, Todo, NewTodo, db } from "@/lib/drizzle";
+import { todoTable, db } from "@/lib/drizzle";
 // import { db } from "@vercel/postgres"
 import { NextRequest, NextResponse } from "next/server"
 import { sql } from "@vercel/postgres"
@@ -8,11 +8,11 @@ export async function GET(request: NextRequest) {
     try {
         await sql`CREATE TABLE IF NOT EXISTS Todos(id  serial, Task varchar(255));`
         const res = await db.select().from(todoTable)
-        console.log(res)
-        return NextResponse.json({ res })
+        // console.log(res)
+        return NextResponse.json(res)
 
     } catch (err) {
-        console.log(err)
+        // console.log(err)
         console.log((err as { message: string }).message)
         return NextResponse.json("Something went wrong")
     }
