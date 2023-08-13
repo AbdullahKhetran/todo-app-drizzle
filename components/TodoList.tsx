@@ -9,14 +9,14 @@ const getData = async (): Promise<Todo[]> => {
 
     let isLocalHost: boolean = false
 
-    if (typeof window === undefined) {
-        isLocalHost = true
-    }
+    // if (typeof window === undefined) {
+    //     isLocalHost = true
+    // }
 
-    const apiUrl = isLocalHost ? "http://localhost:3000" : deployedURL
+    const siteUrl = isLocalHost ? "http://localhost:3000" : deployedURL
 
     try {
-        const res = await fetch(`${apiUrl}/api/todo`, {
+        const res = await fetch(`${siteUrl}/api/todo`, {
             method: "GET",
             cache: "no-store",
             headers: {
