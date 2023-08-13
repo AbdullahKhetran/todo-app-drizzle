@@ -7,7 +7,7 @@ const getData = async (): Promise<Todo[]> => {
 
     const deployedURL = process.env.REACT_APP_API_URL
 
-    let isLocalHost: boolean = false
+    let isLocalHost: boolean = true
 
     // if (typeof window === undefined) {
     //     isLocalHost = true
