@@ -6,7 +6,7 @@ const getData = async (): Promise<Todo[]> => {
 
     // in server components absolute url path is needed so will construct that
 
-    const deployedURL = process.env.REACT_APP_API_URL
+    const deployedURL = process.env.REACT_APP_URL
 
     let isLocalHost: boolean = false
 
