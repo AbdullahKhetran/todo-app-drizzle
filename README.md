@@ -6,6 +6,14 @@ Tutorials from youtube has been followed
 
 [Part 2](https://youtu.be/w4DFArUDtfM)
 
+
+### Middleware
+
+[Middleware](https://nextjs.org/docs/app/building-your-application/routing/middleware) is implemented on the about page.
+
+Visit to [about](https://todo-app-eight-black.vercel.app/about) page will redirect to the [home](https://todo-app-eight-black.vercel.app/) page
+
+
 ## Getting Started
 
 Install the dependencies
