@@ -20,7 +20,7 @@ const TodoList = () => {
         const siteUrl = isLocalHost ? "http://localhost:3000" : deployedURL
     
         try {
-            const res = await fetch(`${siteUrl}/api/todo`, {
+            const res = await fetch(`api/todo`, {
                 method: "GET",
                 cache: "no-store",
                 headers: {
