@@ -12,8 +12,8 @@ const TodoList = () => {
     const getData = async () => {
         // in server components absolute url path is needed so will construct that    
         const deployedURL = process.env.REACT_APP_URL    
-        // let isLocalHost: boolean = false    
-        let isLocalHost: boolean = true    
+        let isLocalHost: boolean = false    
+        // let isLocalHost: boolean = true    
         if (typeof window === undefined) {
             isLocalHost = true
         }    
