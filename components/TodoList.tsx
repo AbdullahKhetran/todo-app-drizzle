@@ -10,14 +10,8 @@ import AddTodo from "./AddTodo";
 const TodoList = () => {
     const [todos, setTodos] = useState<Todo[]>([])
 
+    // fetch data
     const getData = async () => {
-        // in server components absolute url path is needed so will construct that    
-        const deployedURL = process.env.REACT_APP_URL  
-
-        // change manually when on localhost
-        let isLocalHost: boolean = false    
-
-        const siteUrl = isLocalHost ? "http://localhost:3000" : deployedURL
     
         try {
             const res = await fetch(`api/todo`, {
@@ -46,13 +40,13 @@ const TodoList = () => {
     }, []);
 
 
-
+    // get fresh data after adding a new todo; ui also gets updated
     const handleAddTodo = async () => {
-        // when todo is created, this function gets called and fresh data is fetched
         await getData();
     };
 
 
+    // send a request to delete data
     const handleDelete = async (id: number) => {
         try {
             // sending id as query parameter
