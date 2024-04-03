@@ -1,5 +1,4 @@
 "use client"
-require('dotenv').config
 import { Todo } from "@/lib/drizzle";
 import trasbin from "@/public/trashbin.svg"
 import Image from "next/image";
@@ -28,7 +27,7 @@ const TodoList = () => {
             setTodos(result)
     
         } catch (err) {
-            console.log(err)
+            // console.log(err)
             throw err
         }    
     }

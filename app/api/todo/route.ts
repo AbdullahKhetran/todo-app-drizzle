@@ -5,7 +5,7 @@ import { eq } from "drizzle-orm";
 
 
 export async function GET(request: NextRequest) {
-    console.log("GET function hit")
+    // console.log("GET function hit")
 
     try {
         await sql`CREATE TABLE IF NOT EXISTS Todos(id  serial, Task varchar(255));`
@@ -14,15 +14,15 @@ export async function GET(request: NextRequest) {
         return NextResponse.json(res)
 
     } catch (err) {
-        console.log("error",err)
+        // console.log("error",err)
         // console.log((err as { message: string }).message)
-        return NextResponse.json("Something went wrong in get request")
+        return NextResponse.json("Something went wrong in GET request")
     }
 
 }
 
 export async function POST(request: NextRequest) {
-    console.log("POST function hit")
+    // console.log("POST function hit")
     const req = await request.json();
     try {
         if (req.task) {
@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
                 task: req.task
             }).returning();
             console.log(res)
-            return NextResponse.json({ message: "Data added sucessfully" })
+            return NextResponse.json({ message: "Todo created sucessfully" })
         } else {
             throw new Error("Task field is required")
         }
@@ -42,13 +42,13 @@ export async function POST(request: NextRequest) {
 
 
 export async function DELETE(request: any) {
-    console.log("DELETE function hit")
+    // console.log("DELETE function hit")
 
     // extracting id from query parameter
     const params = request.nextUrl.searchParams
-    console.log("params", params)
+    // console.log("params", params)
     const paramTodoId = Number(params.get("id"))
-    console.log("paramTodoId", paramTodoId)
+    // console.log("paramTodoId", paramTodoId)
 
 
     try {
@@ -56,11 +56,11 @@ export async function DELETE(request: any) {
             throw new Error('ID parameter is missing');
         }
         await db.delete(todoTable).where(eq(todoTable.id, paramTodoId));
-        console.log(paramTodoId)
+        // console.log(paramTodoId)
         return NextResponse.json({message: "Todo item deleted sucessfully"})  
 
     } catch (err) {
-        console.error(err);
+        // console.error(err);
         return NextResponse.json({ error: 'Failed to delete the todo item' });
     }
 }

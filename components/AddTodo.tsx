@@ -21,7 +21,8 @@ const AddTodo = ({onAddTodo}: any) => {
             // empties the input box
             setTask("")
         } catch (error) {
-            console.log("error")
+            // console.log("error")
+            throw(error)
         }
 
     }
