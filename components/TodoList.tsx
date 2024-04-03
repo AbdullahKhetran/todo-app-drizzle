@@ -12,12 +12,11 @@ const TodoList = () => {
 
     const getData = async () => {
         // in server components absolute url path is needed so will construct that    
-        const deployedURL = process.env.REACT_APP_URL    
+        const deployedURL = process.env.REACT_APP_URL  
+
+        // change manually when on localhost
         let isLocalHost: boolean = false    
-        // let isLocalHost: boolean = true    
-        if (typeof window === undefined) {
-            isLocalHost = true
-        }    
+
         const siteUrl = isLocalHost ? "http://localhost:3000" : deployedURL
     
         try {
