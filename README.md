@@ -1,4 +1,6 @@
+
 ## About
+
 This is an attempt at learning Drizzle ORM and Vercel Postgres by creating an Todo app
 
 Tutorials from youtube has been followed
